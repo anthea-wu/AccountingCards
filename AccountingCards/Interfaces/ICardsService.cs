@@ -5,6 +5,6 @@ namespace AccountingCards.Interfaces
 {
     public interface ICardsService
     {
-        void CreateDefaultCard(List<Card> cardList);
+        public void CreateDefaultCard(List<Card> cardList);
     }
 }

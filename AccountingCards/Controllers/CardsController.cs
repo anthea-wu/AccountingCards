@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AccountingCards.Controllers
 {
-    public class Cards : Controller
+    public class CardsController : Controller
     {
         private readonly AccountingViewModel _accounting = new AccountingViewModel();
         private readonly CardsService _cardsService;
 
-        public Cards(CardsService cardsService)
+        public CardsController(CardsService cardsService)
         {
             _cardsService = cardsService;
         }
