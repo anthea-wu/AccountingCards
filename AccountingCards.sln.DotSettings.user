@@ -1,6 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fccd7d71_002Daac8_002D48c6_002Da793_002D23a1de5cfd1e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="When_Accounting_Cards_Empty_Should_Create_Default_Card" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::0D214F94-0BAA-41AC-82BF-5660A4FADF1D::.NETCoreApp,Version=v3.1::UnitTest.CardsControllerTests.When_Accounting_Cards_Empty_Should_Create_Default_Card&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::0D214F94-0BAA-41AC-82BF-5660A4FADF1D::.NETCoreApp,Version=v3.1::UnitTest.CardsServicesTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

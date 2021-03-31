@@ -9,7 +9,7 @@ using NUnit.Framework;
 
 namespace UnitTest
 {
-    public class CardsControllerTests
+    public class CardsServicesTest
     {
         private CardsService _cardsService;
         private CardsController _cardsController;
