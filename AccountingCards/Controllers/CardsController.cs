@@ -17,10 +17,7 @@ namespace AccountingCards.Controllers
         // GET
         public IActionResult Index()
         {
-            if (_accounting.Cards.Count == 0)
-            {
-                _cardsService.CreateDefaultCard(_accounting.Cards);
-            }
+            _cardsService.CreateDefaultCard(_accounting.Cards);
 
             return View(_accounting);
         }

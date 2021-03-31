@@ -8,7 +8,10 @@ namespace AccountingCards.Services
     {
         public void CreateDefaultCard(List<Card> cardList)
         {
-            cardList.Add( new Card() {Name = "Undefined", Order = 1} );
+            if (cardList.Count == 0)
+            {
+                cardList.Add( new Card() {Name = "Undefined", Order = 1} );    
+            }
         }
     }
 }
