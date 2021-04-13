@@ -1,8 +1,33 @@
-﻿@model object
+﻿@model AccountingCards.Models.AccountingViewModel
 
 @{
     ViewBag.Title = "Accounting Cards";
     Layout = "_Layout";
 }
 
-<h2>Accounting Cards</h2>
+<div id="app">
+    <h2>Accounting Cards</h2>
+    <div>
+        <ul>
+            <li v-for="card in cards">{{ card.order }}: {{ card.name }}</li>
+        </ul>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="https://unpkg.com/vue@next"></script>
+    
+    <script>
+    
+    const app = Vue.createApp({
+        data(){
+            return {
+                cards: @Json.Serialize(Model.Cards)
+            }
+        }
+    });
+    app.mount('#app');
+        
+    </script>
+}
