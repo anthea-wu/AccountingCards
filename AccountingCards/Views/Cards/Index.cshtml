@@ -5,12 +5,19 @@
     Layout = "_Layout";
 }
 
+@section Styles
+{
+    .card {
+    border: black 1px solid;
+    width: 12vw;
+    height: 30vh;
+    }
+}
+
 <div id="app">
     <h2>Accounting Cards</h2>
-    <div>
-        <ul>
-            <li v-for="card in cards">{{ card.order }}: {{ card.name }}</li>
-        </ul>
+    <div v-for="card in cards" class="card align-items-center justify-content-center mt-5">
+        {{ card.name }}
     </div>
 </div>
 
