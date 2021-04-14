@@ -1,0 +1,28 @@
+﻿@model AccountingViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div id="app">
+    <div v-for="currentCard in card">
+        {{ currentCard.name }}
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+    
+    const app = Vue.createApp({
+        data(){
+            return {
+                card: @Json.Serialize(Model.Cards),
+            }
+        }
+    });
+    app.mount('#app');
+    
+    </script>
+}
