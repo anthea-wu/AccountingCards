@@ -10,10 +10,12 @@ namespace AccountingCards.Controllers
     {
         private static readonly AccountingViewModel _accounting = new AccountingViewModel();
         private readonly CardsService _cardsService;
+        private readonly ILogger<AccountingController> _logger;
 
         public AccountingController(CardsService cardsService, ILogger<AccountingController> logger)
         {
             _cardsService = cardsService;
+            _logger = logger;
         }
 
         // GET
