@@ -16,24 +16,44 @@
 
 <div id="app">
     <h2>Accounting Cards</h2>
-    <div v-for="card in cards" class="card align-items-center justify-content-center mt-5">
+    <div v-for="card in cards" 
+         class="card align-items-center justify-content-center mt-5" 
+         v-on:click="showCardDetail()"
+         :key="card.order" >
         {{ card.name }}
     </div>
 </div>
 
 @section Scripts
 {
-    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
+    
+        
+    const AccountingRequest = axios.create({
+            baseURL: 'https://localhost:5001/Accounting'
+    })
     
     const app = Vue.createApp({
         data(){
             return {
-                cards: @Json.Serialize(Model.Cards)
+                cards: @Json.Serialize(Model.Cards),
+            }
+        },
+        methods: {
+            showCardDetail: function(val){
+                let url = '/ShowCardDetails' + val;
+                AccountingRequest.get(url)
+                .then((response) => {
+                    alert("Change page now !");
+                    window.location.href = response.request.responseURL
+                })
+                .catch((error) => {
+                    alert(error.response.data)
+                })
             }
         }
     });
     app.mount('#app');
-        
     </script>
 }
