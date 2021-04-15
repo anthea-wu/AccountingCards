@@ -42,7 +42,7 @@
         },
         methods: {
             showCardDetail: function(val){
-                let url = '/ShowCardDetails' + val;
+                let url = '/Card/' + val;
                 AccountingRequest.get(url)
                 .then((response) => {
                     alert("Change page now !");

@@ -28,7 +28,7 @@ namespace AccountingCards.Controllers
         }
 
         [HttpGet]
-        [Route("[controller]/{name}")]
+        [Route("[controller]/Card/{name}")]
         public IActionResult ShowCardDetails(string name)
         {
             if (_accounting.Cards.Exists(x => x.Name == name))
