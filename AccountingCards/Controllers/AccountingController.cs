@@ -32,18 +32,10 @@ namespace AccountingCards.Controllers
         [Route("[controller]/Card/{name}")]
         public IActionResult ShowCardDetails(string name)
         {
-            var currentAccounting = new AccountingViewModel()
-            {
-                Cards = new List<Card>() { new Card() { Name = "Unfounded", Order = -1 } }
-            };
-            
-            if (_accounting.Cards.Exists(x => string.Equals(x.Name, name, StringComparison.CurrentCultureIgnoreCase)))
-            {
-                var showingCard = _accounting.Cards.Find(x => string.Equals(x.Name, name, StringComparison.CurrentCultureIgnoreCase));
-                currentAccounting.Cards[0] = showingCard;
-            }
-            
+            var currentAccounting = _cardsService.GetCurrentAccountingCard(_accounting.Cards, name);
+
             return View(currentAccounting);
         }
+
     }
 }
