@@ -43,9 +43,8 @@
         methods: {
             showCardDetail: function(val){
                 let url = '/Card/' + val;
-                AccountingRequest.get(url.toUpperCase())
+                AccountingRequest.get(url)
                 .then((response) => {
-                    alert("Change page now !");
                     window.location.href = response.request.responseURL
                 })
                 .catch((error) => {
