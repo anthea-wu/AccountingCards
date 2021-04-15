@@ -6,8 +6,8 @@
 }
 
 <div id="app">
-    <div v-for="currentCard in card">
-        {{ currentCard.name }}
+    <div>
+        {{ card.name }}
     </div>
 </div>
 
@@ -18,7 +18,7 @@
     const app = Vue.createApp({
         data(){
             return {
-                card: @Json.Serialize(Model.Cards),
+                card: @Json.Serialize(Model.Cards[0]),
             }
         }
     });
