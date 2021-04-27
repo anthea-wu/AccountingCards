@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using AccountingCards.Interfaces;
 using AccountingCards.Models;
 
 namespace AccountingCards.Services
 {
-    public class CardsService : ICardsService
+    public class CardsService
     {
         public void CreateDefaultCard(List<Card> cardList)
         {
