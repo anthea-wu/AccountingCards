@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace AccountingCards.Controllers
 {
+    // Controller 只做他該做的事 (取得回傳資料) : 聚合
     public class AccountingController : Controller
     {
         private static readonly AccountingViewModel _accounting = new AccountingViewModel();
@@ -36,6 +37,5 @@ namespace AccountingCards.Controllers
 
             return View(currentAccounting);
         }
-
     }
 }
