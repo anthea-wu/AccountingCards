@@ -7,18 +7,28 @@
 
 <div id="app">
     <div>
-        {{ card.name }}
+        <h2>{{ card.name }}</h2>
+        <ul v-for="detail in details">
+            <li>{{ detail.order }}</li>
+            <li>{{ detail.date }}</li>
+            <li>{{ detail.info }}</li>
+            <li>{{ detail.price }}</li>
+            <li>{{ detail.card.name }}</li>
+        </ul>
     </div>
 </div>
 
 @section Scripts
 {
+    <script src="https://unpkg.com/vue@next"></script>
+
     <script>
     
     const app = Vue.createApp({
         data(){
             return {
                 card: @Json.Serialize(Model.Cards[0]),
+                details: @Json.Serialize(Model.Details),
             }
         }
     });

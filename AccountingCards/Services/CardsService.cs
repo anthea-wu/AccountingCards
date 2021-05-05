@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using AccountingCards.Controllers;
 using AccountingCards.Models;
 
 namespace AccountingCards.Services
@@ -10,14 +12,34 @@ namespace AccountingCards.Services
         {
             if (cardList.Count == 0)
             {
-                cardList.Add( new Card() {Name = "Undefined", Order = 1} );    
+                cardList.Add( new Card() {Name = "Undefined", Order = 0} );    
             }
         }
 
-        public AccountingViewModel GetCurrentAccountingCard(List<Card> cards, string name)
+        public void CreateDefaultDetails(AccountingViewModel accounting)
         {
-            var currentCard = GetNotNullCurrentCard(cards, name) ?? GetDefaultErrorCard();
-            return new AccountingViewModel() {Cards = new List<Card>() {currentCard}};
+            if (accounting.Details.Count == 0)
+            {
+                accounting.Details.Add(new Detail()
+                {
+                    Card = accounting.Cards[0],
+                    Date = DateTime.Now,
+                    Info = "This is the default card and details.",
+                    Order = 0,
+                    Price = 0
+                });
+            }
+        }
+
+        public AccountingViewModel GetCurrentAccountingCard(AccountingViewModel accounting, string name)
+        {
+            var currentCard = GetNotNullCurrentCard(accounting.Cards, name) ?? GetDefaultErrorCard();
+            var currentDetails = accounting.Details.Where(x => string.Equals(x.Card.Name, name, StringComparison.CurrentCultureIgnoreCase)).ToList();
+            return new AccountingViewModel()
+            {
+                Cards = new List<Card>() {currentCard},
+                Details = currentDetails,
+            };
         }
 
         private static Card GetDefaultErrorCard()

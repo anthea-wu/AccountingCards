@@ -25,6 +25,7 @@ namespace AccountingCards.Controllers
         public IActionResult Index()
         {
             _cardsService.CreateDefaultCard(_accounting.Cards);
+            _cardsService.CreateDefaultDetails(_accounting);
 
             return View(_accounting);
         }
@@ -33,7 +34,7 @@ namespace AccountingCards.Controllers
         [Route("[controller]/Card/{name}")]
         public IActionResult ShowCardDetails(string name)
         {
-            var currentAccounting = _cardsService.GetCurrentAccountingCard(_accounting.Cards, name);
+            var currentAccounting = _cardsService.GetCurrentAccountingCard(_accounting, name);
 
             return View(currentAccounting);
         }
