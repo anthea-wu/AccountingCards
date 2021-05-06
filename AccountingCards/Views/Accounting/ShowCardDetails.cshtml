@@ -8,15 +8,32 @@
 <div id="app">
     <div>
         <h2>{{ card.name }}</h2>
-        <ul v-for="detail in details">
-            <li>{{ detail.order }}</li>
-            <li>{{ detail.date }}</li>
-            <li>{{ detail.info }}</li>
-            <li>{{ detail.price }}</li>
-            <li>{{ detail.card.name }}</li>
-        </ul>
+        <div class="row mt-4">
+            <table class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Order</th>
+                    <th scope="col">Date</th>
+                    <th scope="col" colspan="2">Details</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Card</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="detail in details">
+                        <td name="order" class="align-middle detail-order text-center">{{ detail.order }}</td>
+                        <td class="align-middle">{{ detail.date }}</td>
+                        <td colspan="2" class="align-middle">{{ detail.info }}</td>
+                        <td class="align-middle">{{ detail.price }}</td>
+                        <td class="align-middle">{{ detail.card.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+
+
 
 @section Scripts
 {
