@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e78df6be-7527-457c-a8c3-6dc8100e7a51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Controllers/CardsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CardsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UnitTest/UnitTest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../UnitTest/UnitTest.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UnitTest/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../UnitTest/CardsControllerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AccountingCards.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AccountingCards.dir/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,13 +68,15 @@
       <option name="presentableId" value="Default" />
       <updated>1614911009444</updated>
       <workItem from="1614911012851" duration="2000" />
+      <workItem from="1620575020257" duration="1764000" />
+      <workItem from="1620629789764" duration="993000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -88,6 +88,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

@@ -11,7 +11,7 @@
         <div class="row mt-4">
             <table class="table">
                 <thead class="thead-light">
-                <tr>
+                <tr class="text-center">
                     <th scope="col">Order</th>
                     <th scope="col">Date</th>
                     <th scope="col" colspan="2">Details</th>
@@ -20,12 +20,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="detail in details">
-                        <td name="order" class="align-middle detail-order text-center">{{ detail.order }}</td>
-                        <td class="align-middle">{{ detail.date }}</td>
-                        <td colspan="2" class="align-middle">{{ detail.info }}</td>
-                        <td class="align-middle">{{ detail.price }}</td>
-                        <td class="align-middle">{{ detail.card.name }}</td>
+                    <tr v-for="detail in details" class="align-middle text-center">
+                        <td>{{ detail.order }}</td>
+                        <td>{{ detail.date }}</td>
+                        <td colspan="2" class="text-left">{{ detail.info }}</td>
+                        <td>{{ detail.price }}</td>
+                        <td>{{ detail.card.name }}</td>
                     </tr>
                 </tbody>
             </table>

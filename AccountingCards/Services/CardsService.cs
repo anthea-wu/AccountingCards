@@ -23,7 +23,7 @@ namespace AccountingCards.Services
                 accounting.Details.Add(new Detail()
                 {
                     Card = accounting.Cards[0],
-                    Date = DateTime.Now,
+                    Date = DateTime.Now.ToString("yyyy MMMM dd"),
                     Info = "This is the default card and details.",
                     Order = 0,
                     Price = 0
