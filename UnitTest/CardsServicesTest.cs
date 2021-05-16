@@ -39,7 +39,6 @@ namespace UnitTest
         }
         
         [Test]
-        [Ignore("For feature.")]
         public void When_Cards_Not_Exist_Should_Create_Error_Card()
         {
             var emptyCards = GivenCardListWithoutCards();
@@ -49,11 +48,10 @@ namespace UnitTest
         }
         
         [Test]
-        [Ignore("For feature.")]
         public void When_Cards_Exist_Should_Get_Current_Card()
         {
             var cards = GivenAccountingViewModel("Foods");
-            var currentCard = _cardsService.GetCurrentAccountingCard(new AccountingViewModel(), "Foods");
+            var currentCard = _cardsService.GetCurrentAccountingCard(cards, "Foods");
 
             ShouldGetCorrectCurrentCard(cards, currentCard);
         }
