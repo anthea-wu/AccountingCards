@@ -23,53 +23,57 @@ namespace UnitTest
         [Test]
         public void When_Accounting_Cards_Empty_Should_Create_Default_Card()
         {
-            var cards = GivenCardListWithoutCards();
-            CreateDefaultCard(cards);
+            var accounting = GivenEmptyAccounting();
+            CreateDefaultAccounting(accounting);
 
-            CardsShouldEqualToDefaultCard(GivenDefaultCards(), cards);
+            CardsShouldEqualToDefaultCard(GivenDefaultCards(), accounting.Cards);
         }
 
         [Test]
         public void When_Accounting_Cards_Not_Empty_Should_Not_Create_Default_Card()
         {
-            var cards = GiveCardListWithCards();
-            CreateDefaultCard(cards);
+            var accounting = GiveAccountingWithCard();
+            CreateDefaultAccounting(accounting);
 
-            CardsShouldNotEqualToDefaultCard(GivenDefaultCards(), cards);
+            CardsShouldNotEqualToDefaultCard(GivenDefaultCards(), accounting.Cards);
         }
         
         [Test]
         public void When_Cards_Not_Exist_Should_Create_Error_Card()
         {
-            var emptyCards = GivenCardListWithoutCards();
-            var currentCard = _cardsService.GetCurrentAccountingCard(new AccountingViewModel(), "Foods");
+            var emptyAccounting = GivenEmptyAccounting();
+            var currentAccounting = _cardsService.GetCurrentAccountingCard(emptyAccounting, "Foods");
 
-            ShouldGetErrorCard(currentCard.Cards);
+            ShouldGetErrorCard(currentAccounting.Cards);
         }
         
         [Test]
         public void When_Cards_Exist_Should_Get_Current_Card()
         {
-            var cards = GivenAccountingViewModel("Foods");
-            var currentCard = _cardsService.GetCurrentAccountingCard(cards, "Foods");
+            var accounting = GivenAccounting("Foods");
+            var currentAccounting = _cardsService.GetCurrentAccountingCard(accounting, "Foods");
 
-            ShouldGetCorrectCurrentCard(cards, currentCard);
+            ShouldGetCorrectCurrentCard(accounting, currentAccounting);
         }
 
-        [Test]
-        public void METHOD()
+        private AccountingViewModel GivenEmptyAccounting()
         {
-            
+            return new AccountingViewModel()
+            {
+                Cards = new List<Card>(),
+                Details = new List<Detail>()
+
+            };
         }
 
-        private List<Card> GivenCardListWithoutCards()
+        private static AccountingViewModel GiveAccountingWithCard()
         {
-            return new List<Card>();
-        }
+            return new AccountingViewModel()
+            {
+                Cards = new List<Card>(){ new Card() },
+                Details = new List<Detail>()
 
-        private static List<Card> GiveCardListWithCards()
-        {
-            return new List<Card>(){ new Card() };
+            };
         }
 
         private static List<Card> GivenDefaultCards()
@@ -77,7 +81,7 @@ namespace UnitTest
             return new List<Card>(){  new Card() {Name = "Undefined", Order = 0} };
         }
 
-        private static AccountingViewModel GivenAccountingViewModel(string cardName)
+        private static AccountingViewModel GivenAccounting(string cardName)
         {
             return new AccountingViewModel()
             {
@@ -99,9 +103,9 @@ namespace UnitTest
             };
         }
 
-        private void CreateDefaultCard(List<Card> emptyCard)
+        private void CreateDefaultAccounting(AccountingViewModel emptyAccounting)
         {
-            _cardsService.CreateDefaultCard(emptyCard);
+            _cardsService.CreateDefaultCardAndDetail(emptyAccounting);
         }
 
         private static void CardsShouldEqualToDefaultCard(IEnumerable<Card> defaultCards, IEnumerable<Card> cards)
