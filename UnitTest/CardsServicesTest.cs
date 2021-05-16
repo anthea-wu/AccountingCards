@@ -56,6 +56,12 @@ namespace UnitTest
             ShouldGetCorrectCurrentCard(cards, currentCard);
         }
 
+        [Test]
+        public void METHOD()
+        {
+            
+        }
+
         private List<Card> GivenCardListWithoutCards()
         {
             return new List<Card>();

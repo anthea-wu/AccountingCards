@@ -24,8 +24,7 @@ namespace AccountingCards.Controllers
         [Route("[controller]")]
         public IActionResult Index()
         {
-            _cardsService.CreateDefaultCard(_accounting.Cards);
-            _cardsService.CreateDefaultDetails(_accounting);
+            _cardsService.CreateDefaultCardAndDetail(_accounting);
 
             return View(_accounting);
         }
